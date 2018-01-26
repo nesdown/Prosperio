@@ -2,8 +2,8 @@
 
 const readline = require('./readline-input.js');
 const filesys = require('./fsw.js');
-
-const data = filesys.read();
+const login = require('./main.js')
+const data = filesys.readStat();
 
 class User {
 
@@ -21,6 +21,7 @@ function session(min) {
   const currentDay = (new Date()).getTime();
   const lastDay = Date.parse(this.dates[this.dates.length - 1]);
   const pause =  ((currentDay - lastDay) / 86400000);
+  this.total += min;
   (!pause) ? this.currentStreak = 1 : 0;
   (pause >= 1 && pause < 2) ? this.currentStreak += 1 : 0;
   (pause >= 2) ? this.currentStreak = 1 : 0;
@@ -49,7 +50,7 @@ function stat() {
   let i;
   for (i = 0; i < this.dates.length; i++) {
     console.log(new Date(this.dates[i]).toString() +
-    ' Meditation time: ' + (this.timePerDay[i]) + 'min');
+    ' Meditation time: ' + (this.timePerDay[i]) + ' min');
   }
 }
 
@@ -67,7 +68,11 @@ function main(choice, min, login) {
   if (choice === 'ses') {
     session.call(currUser, min);
     data[login] = currUser;
-    filesys.write(data);
+    filesys.writeStat(data);
   }
 }
-module.exports.main = main;
+
+module.exports = {
+  main,
+  User
+}

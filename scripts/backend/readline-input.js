@@ -2,6 +2,7 @@
 
 const readline = require('readline');
 const console = require('console');
+const main = require('./main.js')
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -9,10 +10,24 @@ const rl = readline.createInterface({
 });
 
 const read = {
-  readItem(fn) { // function for reading menu items
+  readItem(log, fn) { // function for reading menu items
+    main.name = log;
     console.clear();
     rl.question(
       'Select an item:\n 1 - maditation\n 2 - statistics\n 3 - settings\n'
+      , fn);
+  },
+  readLoud(fn) { // function for reading loud
+    console.clear();
+    rl.question(
+      'New loud: '
+      , fn);
+  },
+  readOption(fn) { // function for reading settings options
+    console.clear();
+    rl.question(
+      'Select an item:\n 1 - Change loud of assistance voice\n' +
+      ' 2 - Change loud of music\n' + ' 3 - Clean statistic\n'
       , fn);
   },
   readTime(fn) { // function for reading the time
@@ -33,5 +48,7 @@ module.exports = {
   rl,
   readItem: read.readItem,
   readTime: read.readTime,
-  readName: read.readName
+  readName: read.readName,
+  readOpt: read.readOption,
+  readLoud: read.readLoud
 };

@@ -8,10 +8,16 @@ const result = (min) => (sttc.ses(min));
 
 const Timer = class {                         // simple countdown timer
   start(minutes, seconds) {
+    if (minutes >= 60 || minutes < 0 || seconds >= 60 || seconds < 0) {
+      throw new Error('incorrect time format');// error of incorrect time format
+    }
     const minutesResult = minutes;
     const i = setInterval(() => {
       console.clear();
-      console.log(`${minutes}:${seconds}`);
+      if (minutes >= 10 && seconds >= 10) console.log(`${minutes}:${seconds}`);
+      if (minutes < 10 && seconds >= 10) console.log(`0${minutes}:${seconds}`);
+      if (minutes >= 10 && seconds < 10) console.log(`${minutes}:0${seconds}`);
+      if (minutes < 10 && seconds < 10) console.log(`0${minutes}:0${seconds}`);
       seconds--;
       const timeClear = setTimeout(() => (console.clear()), 1000);
       if (seconds < 0) {

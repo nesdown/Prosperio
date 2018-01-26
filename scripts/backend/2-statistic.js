@@ -2,15 +2,15 @@
 
 const readline = require('./readline-input.js');
 const mainstat = require('./main-stat.js');
+const login = require('./main.js');
 
 function statistic() {
-  readline.readName(mainstat.main.bind(null, 'stat', 0));
+  mainstat.main('stat', 0, login.name);
 }
 
 function session(min) {
   console.clear();
-  console.log(min);
-  readline.readName(mainstat.main.bind(null, 'ses', min));
+  mainstat.main('ses', min, login.name);
 }
 
 module.exports = {
