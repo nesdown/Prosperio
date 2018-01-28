@@ -1,7 +1,6 @@
 'use strict';
 
 const crypto = require('crypto');
-const cipher = crypto.createCipher('aes192', 'it is not a password');
 const fs = require('fs');
 const login = require('./main.js');
 
@@ -34,6 +33,7 @@ function readStatistic() {
 }
 
 function writeStatistic(data) {
+  const cipher = crypto.createCipher('aes192', 'it is not a password');
   data = JSON.stringify(data);
   let encrypted = cipher.update(data, 'utf8', 'hex');
   encrypted += cipher.final('hex');

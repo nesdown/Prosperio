@@ -2,8 +2,7 @@
 
 const readline = require('./readline-input.js');
 const filesys = require('./fsw.js');
-const login = require('./main.js')
-const data = filesys.readStat();
+const mn = require('./main.js')
 
 class User {
 
@@ -55,7 +54,7 @@ function stat() {
 }
 
 function main(choice, min, login) {
-  readline.rl.close();
+  const data = filesys.readStat();
   let currUser;
   if (data[login]) {
     currUser = data[login];
