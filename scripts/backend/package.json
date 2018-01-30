@@ -1,0 +1,31 @@
+{
+  "name": "prosperio-console",
+  "version": "1.0.0",
+  "description": "meditaion web-service",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.16.2",
+    "facebook-node": "^0.0.3",
+    "instagram-private-api": "^0.6.7",
+    "neo-instagram": "^1.2.0",
+    "node-instagram": "^4.1.0",
+    "twitter": "^1.7.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/batovpasha/Prosperio-console.git"
+  },
+  "keywords": [
+    "Prosperio"
+  ],
+  "author": "Pavlo Batov and Roman Dovhopoliuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/batovpasha/Prosperio-console/issues"
+  },
+  "homepage": "https://github.com/batovpasha/Prosperio-console#readme"
+}

@@ -1,8 +1,8 @@
 'use strict';
 
-const readline = require('./readline-input.js');
 const filesys = require('./fsw.js');
-const mn = require('./main.js')
+const readline = require('./readline-input.js');
+const qsn = require('./social.js').qsn;
 
 class User {
 
@@ -24,9 +24,7 @@ function session(min) {
   (!pause) ? this.currentStreak = 1 : 0;
   (pause >= 1 && pause < 2) ? this.currentStreak += 1 : 0;
   (pause >= 2) ? this.currentStreak = 1 : 0;
-  if (this.currentStreak > this.maxStreak) {
-    this.maxStreak = this.currentStreak;
-  }
+  if (this.currentStreak > this.maxStreak) this.maxStreak = this.currentStreak;
   const year = (new Date()).getFullYear();
   let month =  (new Date()).getMonth() + 1;
   const day = (new Date()).getDate();
@@ -40,6 +38,7 @@ function session(min) {
   }
   console.log('Meditation time: ' + min + ' min');
   console.log('Streak: ' + this.currentStreak + ' days');
+  readline.ques(par => qsn.call(null, min, par));
 }
 
 function stat() {
@@ -74,4 +73,4 @@ function main(choice, min, login) {
 module.exports = {
   main,
   User
-}
+};

@@ -3,7 +3,6 @@
 const readline = require('./readline-input.js');
 const mainstat = require('./main-stat.js');
 const main = require('./main.js');
-const emitter = require('./EE.js');
 
 
 function statistic() {

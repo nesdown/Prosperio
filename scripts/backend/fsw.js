@@ -40,15 +40,15 @@ function writeStatistic(data) {
   fs.writeFileSync('database', encrypted);
 }
 
-function readSettings(){
+function readSettings() {
   let data;
-  try{
+  try {
     data = fs.readFileSync('settings.json').toString();
     data = JSON.parse(data);
   } catch (e) {
     data = {};
   }
-  if(!data[login.name]){
+  if (!data[login.name]) {
     data[login.name] = {
       voice: 100,
       music: 100
@@ -57,9 +57,9 @@ function readSettings(){
   return data[login.name];
 }
 
-function writeSettings(sets){
+function writeSettings(sets) {
   let data;
-  try{
+  try {
     data = fs.readFileSync('settings.json').toString();
     data = JSON.parse(data);
   } catch (e) {
@@ -70,8 +70,8 @@ function writeSettings(sets){
   fs.writeFileSync('settings.json', data);
 }
 
-function cleanStatistic(){
-  let data = readStatistic();
+function cleanStatistic() {
+  const data = readStatistic();
   data[login.name] = new User(login.name);
   writeStatistic(data);
 }
