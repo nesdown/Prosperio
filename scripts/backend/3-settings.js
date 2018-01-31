@@ -55,12 +55,8 @@ function main(opt) {
       filesys.clean();
       emitter.emit('loop');
     }
-    if (optNumber === 4) {
-      readline.readSoc(options.social);
-    }
-    if (optNumber === 5) {
-      emitter.emit('start');
-    }
+    if (optNumber === 4) readline.readSoc(options.social);
+    if (optNumber === 5) emitter.emit('start');
   }
 }
 
