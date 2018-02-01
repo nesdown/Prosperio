@@ -28,6 +28,7 @@ const Timer = class {                         // simple countdown timer
         clearInterval(i);
         clearTimeout(timeClear);
         console.log(minutesResult);
+        console.clear();
         result(minutesResult); // call result function for log the result
       }
     }, 1000);

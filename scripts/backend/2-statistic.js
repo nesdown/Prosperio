@@ -11,7 +11,6 @@ function statistic() {
 }
 
 function session(min) {
-  console.clear();
   mainstat.main('ses', min, main.name);
   readline.back();
 }
