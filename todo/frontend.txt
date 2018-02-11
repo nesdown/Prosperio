@@ -1,0 +1,15 @@
+/// TO-DO:
+/// - Meditation slider
+/// - Calendar in statistics
+
+/// BUGS:
+/// - Fix cross button in sidenav after resizing window
+/// - Complete range slider coloring
+/// - Make main div disabled when one sidenav is opened
+
+/// REFACTOR:
+/// - CSS
+
+/// TEST:
+/// - Mozilla Firefox
+/// - IE10+, Edge

@@ -1,0 +1,98 @@
+<!DOCTYPE html5>
+<head>
+  <meta charset="UTF-8">
+  <title>Prosperio Web</title>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</head>
+<body>
+  <div id="settingsSidenav" class="sidenav">
+    <div id="nav-header">
+      <img src="../images/settings.png" alt="Settings" id="settings-nav">
+      <span id="header-title">SETTINGS</span>
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav('settingsSidenav')" id="close-nav">
+        <img src="../images/cross.png" alt="Close">
+      </a>
+    </div>
+    <div class="settings">
+        <span>
+            <img src="../images/sound.png" alt="">
+            Voice assistance
+            <div class="slidecontainer">
+              <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            </div>
+        </span>
+        <span>
+            <img src="../images/music.png" alt="">
+            Music
+            <div class="slidecontainer">
+              <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+            </div>
+        </span>
+        <span>
+            <img src="../images/reset.png" alt="">
+            <a href="#">Reset statistics</a>
+        </span>
+        <span>
+            <img src="../images/share%20light.png" alt="">
+            <a href="#">Share</a>
+        </span>
+        <span>
+            <img src="../images/sign%20out.png" alt="">
+            <a href="#">Sign out</a>
+        </span>
+    </div>
+  </div>
+  
+  <div id="statsSidenav" class="statSidenav">
+    <div id="nav-header">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav('statsSidenav')" id="close-nav">
+        <img src="../images/cross.png" alt="Close">
+      </a>
+      <span id="header-title">STATISTICS</span>
+      <img src="../images/stats.png" alt="Stats" id="stats-nav">
+    </div>
+    <div class="settings">
+      <div class='datepicker'>
+        CALENDAR HERE
+      </div>
+      <div class="container">
+        <div class="column">
+        <img src="../images/longest.png" alt="">
+        longest streak
+        <span id="duration">10 DAYS</span>
+        </div>
+        <div class="column">
+        <img src="../images/time.png" alt="" id="time">
+        time meditating
+        <span id="duration">30 MINS</span>
+        </div>
+        <div class="column">
+        <img src="../images/current.png" alt="">
+        current streak
+        <span id="duration">5 DAYS</span>
+        </div>
+      </div>
+      <span>
+            <img src="../images/share%20light.png" alt="">
+            <a href="#">Share your stats</a>
+        </span>
+        <span>
+            <img src="../images/history.png" alt="">
+            <a href="#">Session history</a>
+        </span> 
+    </div>
+  </div>
+
+<div id="main">
+  <span id='settings' onclick="openNav('settingsSidenav')"><img src="../images/settings%20light.png" alt=""></span>
+  <span id='stats' onclick="openNav('statsSidenav')"><img src="../images/stats%20light.png" alt=""></span>
+  
+  <div id="bg-images">
+    <img src="../images/sl_mountain.png" alt="">
+  </div>
+</div>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src='../scripts/frontend/script.js'></script>
+</body>
+</html>
