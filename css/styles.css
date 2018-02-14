@@ -1,7 +1,4 @@
-@font-face {
-  font-family: "Comfortaa";
-  src: url("../fonts/Comfortaa-Regular.tff") format("tff");
-}
+@import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
 body {
   background: linear-gradient(#6c5b7bD9, #f67280BF, #ffc3a0D9);
